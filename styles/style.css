@@ -1,4 +1,170 @@
+/* Basic Settings */
+:root {
+  --orange: #e47a00;
+  --text-black: #333;
+  --bachground-black: #222;
+  --header-black: #0a0a0a;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   background: pink;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Header */
+.header {
+  background: var(--white);
+  /* text-align: center; */
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+  padding: 20px;
+  width: 180px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle_label,
+.header_icon {
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 0; */
+  /* margin-right: 1em; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  /* background: var(--orange); */
+}
+
+.nav-toggle_label span, 
+.nav-toggle_label span::before, 
+.nav-toggle_label span::after {
+  display: block;
+  background: var(--orange);
+  height: 2px;
+  width: 1.5em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle_label span::before, 
+.nav-toggle_label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle_label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle_label span::after {
+  top: 7px;
+}
+  
+
+
+.nav {
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+.main-nav {
+  list-style: none;
+}
+
+.main-nav_item {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.main-nav_item a {
+  color: var(--text-black);
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.main-nav_item a:hover {
+  color: var(--orange);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms ;
+}
+
+.header_icon {
+  color: var(--text-black);
+  text-decoration: none;
+}
+
+.header_icon:hover {
+  color: var(--orange);
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle_label{
+    display: none;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: auto minmax(600px, 1fr) auto;
+  }
+
+  .nav {
+    all: unset;
+  }
+
+  .main-nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .main-nav_item {
+    margin: 0;
+  }
+
+  .main-nav_item a {
+    opacity: 1;
+  }
 }
