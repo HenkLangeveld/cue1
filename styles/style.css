@@ -5,6 +5,7 @@
   --bachground-black: #222;
   --header-black: #0a0a0a;
   --white: #fff;
+  --header-height: 93px;
 }
 
 * {
@@ -30,8 +31,9 @@ body {
 /* Header */
 .header {
   background: var(--white);
+  height: var(--header-height);
   /* text-align: center; */
-  position: fixed;
+  position: sticky;
   display: grid;
   grid-template-columns: 1fr auto auto;
   z-index: 10;
@@ -146,7 +148,7 @@ body {
 
   .header {
     display: grid;
-    grid-template-columns: auto minmax(600px, 1fr) auto;
+    grid-template-columns: auto minmax(550px, 1fr) auto;
   }
 
   .nav {
