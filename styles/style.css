@@ -72,11 +72,15 @@ body {
   padding: 20px;
 }
 
+.nav-toggle_label{
+  background: var(--orange);
+}
+
 .nav-toggle_label span, 
 .nav-toggle_label span::before, 
 .nav-toggle_label span::after {
   display: block;
-  background: var(--orange);
+  background: var(--white);
   height: 2px;
   width: 1.5em;
   border-radius: 2px;
@@ -201,6 +205,7 @@ body {
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: 300;
+  text-align: center;
   align-self: center;
 }
 
@@ -219,7 +224,6 @@ body {
 /* Section Introduction */
 .introduction {
   background: url(../images/banner6-min.jpg) no-repeat center center/cover;
-  height: 650px;
   color: var(--white);
   position: relative;
 }
@@ -235,21 +239,40 @@ body {
 } */
 
 .articles {
-  display: flex;
-  max-width: 1200px;
-  margin: auto;
   padding: 100px;
+}
+
+@media screen and (min-width: 800px) {
+  .articles {
+    display: flex;
+    max-width: 1200px;
+    margin: auto; 
+  }
 }
 
 .intro_item {
   padding: 0.5rem;
 }
 
+.intro_header {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
 
 .images {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 150px;
 }
+
+@media screen and (min-width: 600px) {
+  .images {
+    flex-direction: row;
+  }
+}
+
 .images img {
   padding: 0.7rem;
 }
@@ -327,24 +350,24 @@ body {
 /* Footer */
 .footer-top {
   display: grid;
-  grid-template-columns: 1fr auto auto auto 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
   align-content: center;
   align-items: center;
   height: 250px;
 }
 
 .footer_logo {
-  grid-column-start: 2;
   width: 200px;
-  margin-right: 60px;
 }
 
 .footer_adress {
-  margin-right: 60px;
+  line-height: 1.5rem;
 }
 
 .company-name {
-  display: block;
+  display: none;
   text-transform: uppercase;
   font-size: 1.1rem;
   letter-spacing: 0.1em;
@@ -353,18 +376,46 @@ body {
 .footer-top a {
   color: var(--orange);
   text-decoration: none;
+  line-height: 1.7rem;
 }
 
 .footer-bottom {
   background: var(--bachground-black);
   color: var(--white);
-  height: 79px;
+  height: 100px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 0.8rem;
 }
 
 .footer_icon {
   color: var(--white);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 700px) {
+  .footer-top {
+    grid-template-columns: 1fr auto auto auto 1fr;
+  }
+
+  .footer_logo {
+    grid-column-start: 2;
+    margin-right: 60px;
+  }
+
+  .footer_adress {
+    margin-right: 60px;
+  }
+
+  .company-name {
+    display: block;
+  }
+
+  .footer-bottom {
+    height: 79px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
