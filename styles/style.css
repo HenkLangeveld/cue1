@@ -22,11 +22,24 @@ html {
 }
 
 body {
-  background: pink;
+  background: var(--white);
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
+/* Reused Elements  */
+.banner {
+  height: 325px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
 
+.banner_heading {
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
 
 /* Header */
 .header {
@@ -34,6 +47,7 @@ body {
   height: var(--header-height);
   /* text-align: center; */
   position: sticky;
+  top: 0;
   display: grid;
   grid-template-columns: 1fr auto auto;
   z-index: 10;
@@ -52,15 +66,10 @@ body {
 
 .nav-toggle_label,
 .header_icon {
-  /* position: absolute; */
-  /* top: 0; */
-  /* right: 0; */
-  /* margin-right: 1em; */
   height: 100%;
   display: flex;
   align-items: center;
   padding: 20px;
-  /* background: var(--orange); */
 }
 
 .nav-toggle_label span, 
@@ -148,7 +157,7 @@ body {
 
   .header {
     display: grid;
-    grid-template-columns: auto minmax(550px, 1fr) auto;
+    grid-template-columns: 1fr minmax(550px, 650px) 1fr;
   }
 
   .nav {
@@ -169,4 +178,115 @@ body {
   .main-nav_item a {
     opacity: 1;
   }
+
+  .header_icon {
+    justify-self: right;
+  }
+}
+
+
+
+/* Landing page */
+/* Section Showcase */
+.showcase {
+  background: url(../images/colin-benders--ada-nieuwendijk-1.jpg) no-repeat center center/cover;
+  height: calc(100vh - var(--header-height));
+  color: var(--white);
+  display: grid;
+  grid-template-rows: 1fr auto auto ;
+  justify-items: center;
+}
+
+.page-header {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  align-self: center;
+}
+
+.page-scroll {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: .5em;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.scroll-icon {
+  padding: 30px;
+}
+
+/* Section Introduction */
+.introduction {
+  background: url(../images/banner6-min.jpg) no-repeat center center/cover;
+  color: var(--white);
+}
+
+/* Page Over Ons */
+.banner_about {
+  background: url(../images/canto-ostinato-ronald-knapp-51-banner.jpg) no-repeat center center/cover;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/* Page Diensten */
+.banner_services {
+  background: url(../images/luigi-nono-prometeo--ada-nieuwendijk-9-banner.jpg) no-repeat center center/cover;
+}
+
+.services {
+  padding: 30px;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 0;
+}
+
+.service_image {
+  width: calc(50vw - 40px);
+  /* grid-column: 2;
+  grid-row: 1, span 2 ; */
+}
+
+.photo_right {
+  grid-template-areas: 
+  "heading photo"
+  "info photo";
+  grid-template-rows: 1fr 1fr;
+  align-content: center;
+}
+.photo_left {
+  grid-template-areas: 
+  "photo heading"
+  "photo info"
+  "photo info2";
+  grid-template-rows: 1fr 1fr 1fr;
+  align-content: center;
+}
+
+.service_header {
+  grid-area: heading;
+  align-self: end;
+  text-transform: uppercase;
+  margin: 0 2rem;
+}
+
+.service_info {
+  grid-area: info;
+  margin: 0 2rem;
+} 
+
+.service_info2 {
+  grid-area: info2;
+  margin: 0 2rem;
+}
+
+.service_image {
+  grid-area: photo;
 }
