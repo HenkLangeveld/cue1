@@ -17,13 +17,15 @@ html {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
   background: var(--white);
-  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
 /* Reused Elements  */
@@ -52,7 +54,7 @@ body {
   grid-template-columns: 1fr auto auto;
   z-index: 10;
   width: 100%;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -72,12 +74,12 @@ body {
   padding: 20px;
 }
 
-.nav-toggle_label{
+.nav-toggle_label {
   background: var(--orange);
 }
 
-.nav-toggle_label span, 
-.nav-toggle_label span::before, 
+.nav-toggle_label span,
+.nav-toggle_label span::before,
 .nav-toggle_label span::after {
   display: block;
   background: var(--white);
@@ -87,9 +89,9 @@ body {
   position: relative;
 }
 
-.nav-toggle_label span::before, 
+.nav-toggle_label span::before,
 .nav-toggle_label span::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -100,8 +102,6 @@ body {
 .nav-toggle_label span::after {
   top: 7px;
 }
-  
-
 
 .nav {
   position: absolute;
@@ -142,7 +142,7 @@ body {
 
 .nav-toggle:checked ~ nav a {
   opacity: 1;
-  transition: opacity 250ms ease-in-out 250ms ;
+  transition: opacity 250ms ease-in-out 250ms;
 }
 
 .header_icon {
@@ -155,7 +155,7 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-  .nav-toggle_label{
+  .nav-toggle_label {
     display: none;
   }
 
@@ -188,16 +188,15 @@ body {
   }
 }
 
-
-
 /* Landing page */
 /* Section Showcase */
 .showcase {
-  background: url(../images/colin-benders--ada-nieuwendijk-1.jpg) no-repeat center center/cover;
+  background: url(../images/colin-benders--ada-nieuwendijk-1.jpg) no-repeat
+    center center/cover;
   height: calc(100vh - var(--header-height));
   color: var(--white);
   display: grid;
-  grid-template-rows: 1fr auto auto ;
+  grid-template-rows: 1fr auto auto;
   justify-items: center;
 }
 
@@ -212,7 +211,7 @@ body {
 .page-scroll {
   text-transform: uppercase;
   font-size: 0.6rem;
-  letter-spacing: .5em;
+  letter-spacing: 0.5em;
   font-weight: 300;
   padding: 10px;
 }
@@ -235,7 +234,7 @@ body {
 
 .introduction::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   width: 100%;
@@ -252,7 +251,7 @@ body {
   .articles {
     display: flex;
     max-width: 1200px;
-    margin: auto; 
+    margin: auto;
   }
 }
 
@@ -283,10 +282,10 @@ body {
   padding: 0.7rem;
 }
 
-
 /* Page Over Ons */
 .banner_about {
-  background: url(../images/canto-ostinato-ronald-knapp-51-banner.jpg) no-repeat center center/cover;
+  background: url(../images/canto-ostinato-ronald-knapp-51-banner.jpg) no-repeat
+    center center/cover;
 }
 
 .about {
@@ -294,10 +293,10 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-
 /* Page Diensten */
 .banner_services {
-  background: url(../images/luigi-nono-prometeo--ada-nieuwendijk-9-banner.jpg) no-repeat center center/cover;
+  background: url(../images/luigi-nono-prometeo--ada-nieuwendijk-9-banner.jpg)
+    no-repeat center center/cover;
 }
 
 .services {
@@ -317,17 +316,17 @@ body {
 }
 
 .photo_right {
-  grid-template-areas: 
-  "heading photo"
-  "info photo";
+  grid-template-areas:
+    "heading photo"
+    "info photo";
   grid-template-rows: 1fr 1fr;
   align-content: center;
 }
 .photo_left {
-  grid-template-areas: 
-  "photo heading"
-  "photo info"
-  "photo info2";
+  grid-template-areas:
+    "photo heading"
+    "photo info"
+    "photo info2";
   grid-template-rows: 1fr 1fr 1fr;
   align-content: center;
 }
@@ -342,7 +341,7 @@ body {
 .service_info {
   grid-area: info;
   margin: 0 2rem;
-} 
+}
 
 .service_info2 {
   grid-area: info2;
