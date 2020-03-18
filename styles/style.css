@@ -191,8 +191,7 @@ body {
 /* Landing page */
 /* Section Showcase */
 .showcase {
-  background: url(../images/colin-benders--ada-nieuwendijk-1.jpg) no-repeat
-    center center/cover;
+  background: url(../images/colin-benders.jpg) no-repeat center center/cover;
   height: calc(100vh - var(--header-height));
   color: var(--white);
   display: grid;
